@@ -7,11 +7,14 @@ import ArrowRightIcon from "../icons/ArrowRightIcon";
 const EventItem = (props) => {
   const { title, image, date, location, id } = props;
 
-  const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
+  const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
   });
+
+  console.log(humanReadableDate);
 
   const formattedAddress = location.replace(", ", "\n");
 
